@@ -1,0 +1,10 @@
+.dog{
+    margin:auto;
+  width: 50%;
+  
+}
+
+.dog>img{
+    width:600px;
+    height: 600px;
+}

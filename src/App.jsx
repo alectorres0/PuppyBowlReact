@@ -1,34 +1,21 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Players from './components/Players'
 import './App.css'
+import { Routes, Route, Link } from "react-router-dom"
+import Details from "./components/Details"
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  const [players,setPlayers] = useState([])
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+   <Routes>
+   <Route path = "/" element = {<Players players = {players} setPlayers = {setPlayers}/>}/>
+    <Route path = "/details/:id" element = {<Details/>}/>
+   </Routes>
+   </div>
+
   )
 }
 
